@@ -11,6 +11,14 @@ function Bar() {
   let [oneTodo, setOneTodo] = useState([]);
   function handleSubmit(e) {
     e.preventDefault();
+    if(inputRef.current.value ==''){
+      alert("Add Task name ");
+      return;
+    }
+    if(inputRefdes.current.value == ''){
+      alert("Add a description");
+      return;
+    }
     singleTask.time = new Date().toLocaleDateString();
     console.log(singleTask);
     setOneTodo((prevTodo) => [...prevTodo, singleTask]);
